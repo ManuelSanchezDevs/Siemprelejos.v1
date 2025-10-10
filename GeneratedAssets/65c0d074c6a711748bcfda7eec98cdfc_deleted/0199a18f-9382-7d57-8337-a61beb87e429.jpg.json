@@ -1,0 +1,20 @@
+{
+    "asset": "65c0d074c6a711748bcfda7eec98cdfc",
+    "fileName": "0199a18f-9382-7d57-8337-a61beb87e429.jpg",
+    "prompt": "quiero que me generes un sprite tipo joystic para manejar el personaje en 2D que sea pixel art atento que sea un boton\n\n",
+    "negativePrompt": "",
+    "model": "94c4260f-b988-40e7-b3d3-435b9f449bd0",
+    "modelName": "Flux.1 Dev",
+    "customSeed": -1,
+    "w3CTraceId": "0d5a42a76eb9f3f3d8afc677876d89cb",
+    "refinementMode": "Generation",
+    "pixelateTargetSize": 0,
+    "pixelateKeepImageSize": false,
+    "pixelatePixelBlockSize": 0,
+    "pixelateMode": 0,
+    "pixelateOutlineThickness": 0,
+    "doodles": {
+        "m_Items": []
+    },
+    "upscaleFactor": 0
+}

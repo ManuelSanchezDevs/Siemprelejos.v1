@@ -1,0 +1,20 @@
+{
+    "asset": "1d8798abde9e90444867fbfa4455fe6a",
+    "fileName": "0199a5fe-dd23-7ac7-86bc-7cea7ebbea27.jpg",
+    "prompt": "hola quiero que sobre este sprite me generes otro sprite con un arma ",
+    "negativePrompt": "",
+    "model": "42302753-dfab-41c7-9314-89cccf7c593a",
+    "modelName": "Platformer Props",
+    "customSeed": -1,
+    "w3CTraceId": "cbaa66995f304bb997885d0bf13504bc",
+    "refinementMode": "Generation",
+    "pixelateTargetSize": 0,
+    "pixelateKeepImageSize": false,
+    "pixelatePixelBlockSize": 0,
+    "pixelateMode": 0,
+    "pixelateOutlineThickness": 0,
+    "doodles": {
+        "m_Items": []
+    },
+    "upscaleFactor": 0
+}

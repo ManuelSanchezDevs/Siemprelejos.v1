@@ -1,0 +1,20 @@
+{
+    "asset": "65c0d074c6a711748bcfda7eec98cdfc",
+    "fileName": "0199a192-0424-7b42-91bd-c526e0e99946.jpg",
+    "prompt": "\"I want you to generate a joystick‑style sprite to control a 2D character, in pixel art, and make sure it looks like a button.\"",
+    "negativePrompt": "",
+    "model": "94c4260f-b988-40e7-b3d3-435b9f449bd0",
+    "modelName": "Flux.1 Dev",
+    "customSeed": -1,
+    "w3CTraceId": "251708100c22386d11f4b1f6fff496c9",
+    "refinementMode": "Generation",
+    "pixelateTargetSize": 0,
+    "pixelateKeepImageSize": false,
+    "pixelatePixelBlockSize": 0,
+    "pixelateMode": 0,
+    "pixelateOutlineThickness": 0,
+    "doodles": {
+        "m_Items": []
+    },
+    "upscaleFactor": 0
+}
