@@ -4,47 +4,75 @@
 using System;
 using UnityEditor;
 using UnityEngine;
-using System.Collections.Generic;
 using System.IO;
+using System.Collections.Generic;
 
-public class RemoveDuplicateAssets
+public class RemoveDuplicateAssets : EditorWindow
 {
+    private string targetFolder = "Assets/Animations"; // Cambia esto si tu carpeta tiene otra ruta
+
     [MenuItem("Tools/Remove Duplicate Assets")]
-    public static void RemoveDuplicates()
+    public static void ShowWindow()
     {
-        string[] assetGuids = AssetDatabase.FindAssets("t:Sprite");
-        Dictionary<string, string> uniqueAssets = new Dictionary<string, string>();
+        GetWindow<RemoveDuplicateAssets>("Remove Duplicate Assets");
+    }
+
+    private void OnGUI()
+    {
+        GUILayout.Label("Remove Duplicate Assets", EditorStyles.boldLabel);
+
+        targetFolder = EditorGUILayout.TextField("Target Folder", targetFolder);
+
+        if (GUILayout.Button("Find and Remove Duplicates"))
+        {
+            RemoveDuplicates();
+        }
+    }
+
+    private void RemoveDuplicates()
+    {
+        if (!AssetDatabase.IsValidFolder(targetFolder))
+        {
+            Debug.LogError($"The folder {targetFolder} does not exist.");
+            return;
+        }
+
+        string[] allAssets = Directory.GetFiles(targetFolder, "*.*", SearchOption.AllDirectories);
+        Dictionary<string, string> fileHashes = new Dictionary<string, string>();
         List<string> duplicates = new List<string>();
 
-        foreach (string guid in assetGuids)
+        foreach (string filePath in allAssets)
         {
-            string path = AssetDatabase.GUIDToAssetPath(guid);
-            string fileName = Path.GetFileName(path);
+            if (filePath.EndsWith(".meta")) continue; // Ignorar archivos .meta
 
-            if (uniqueAssets.ContainsKey(fileName))
+            string fileName = Path.GetFileName(filePath);
+            string fileHash = GetFileHash(filePath);
+
+            if (fileHashes.ContainsKey(fileHash))
             {
-                duplicates.Add(path);
+                duplicates.Add(filePath);
+                Debug.Log($"Duplicate found: {filePath} (Original: {fileHashes[fileHash]})");
             }
             else
             {
-                uniqueAssets[fileName] = path;
+                fileHashes[fileHash] = filePath;
             }
         }
 
-        foreach (string duplicatePath in duplicates)
+        foreach (string duplicate in duplicates)
         {
-            bool success = AssetDatabase.DeleteAsset(duplicatePath);
-            if (success)
-            {
-                Debug.Log($"Eliminado duplicado: {duplicatePath}");
-            }
-            else
-            {
-                Debug.LogWarning($"No se pudo eliminar: {duplicatePath}");
-            }
+            File.Delete(duplicate);
+            File.Delete(duplicate + ".meta"); // También eliminar el archivo .meta
+            Debug.Log($"Deleted duplicate: {duplicate}");
         }
 
         AssetDatabase.Refresh();
-        Debug.Log($"Proceso completado. Se eliminaron {duplicates.Count} duplicados.");
+        Debug.Log("Finished removing duplicates!");
+    }
+
+    private string GetFileHash(string filePath)
+    {
+        byte[] fileBytes = File.ReadAllBytes(filePath);
+        return System.BitConverter.ToString(System.Security.Cryptography.MD5.Create().ComputeHash(fileBytes));
     }
 }

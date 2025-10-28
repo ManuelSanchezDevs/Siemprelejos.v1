@@ -10,7 +10,8 @@ public class PlayerController : MonoBehaviour
 {
     [SerializeField] private PlayerInput playerInput;
     [SerializeField] private float speed;
-
+    [SerializeField] private AttackManager attackScript; // Referencia al script de ataque
+    
     private InputActionMap playerBasic;
     private InputAction attackAction;
     private InputAction moveAction;
@@ -71,12 +72,12 @@ public class PlayerController : MonoBehaviour
 
     private void Attack(InputAction.CallbackContext context)
     {
-        Debug.Log("Attack");
+        attackScript.PerformAttack();
     }
 
     private void StopAttack(InputAction.CallbackContext context)
     {
-        Debug.Log("StopAttack");
+        attackScript.StopAttack();
     }
 
     private void Update()

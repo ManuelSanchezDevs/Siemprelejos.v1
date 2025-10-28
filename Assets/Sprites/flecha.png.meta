@@ -116,32 +116,10 @@ TextureImporter:
       name: flecha_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 8
-        width: 16
-        height: 8
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: fbfd87704a461e170800000000000000
-      internalID: 8205950651708530623
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: flecha_1
-      rect:
-        serializedVersion: 2
-        x: 0
-        y: 0
-        width: 16
-        height: 8
+        x: 2
+        y: 10
+        width: 13
+        height: 3
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -150,8 +128,30 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 2cabae70f621de545aefbc04e827cb3e
-      internalID: -939256950
+      spriteID: 11c7fd61f96e8d04baea8635e54a4ec5
+      internalID: 361590115
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: flecha_1
+      rect:
+        serializedVersion: 2
+        x: 2
+        y: 2
+        width: 13
+        height: 3
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d253944156b6bd4b98c8c34adc024f2
+      internalID: 1970985323
       vertices: []
       indices: 
       edges: []
@@ -160,7 +160,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 1f72b5b37b03a8943ad0e43b689608af
+    spriteID: b7e88e610ad814942ac6877a317e182c
     internalID: 0
     vertices: []
     indices: 
@@ -170,10 +170,12 @@ TextureImporter:
     spriteCustomMetadata:
       entries:
       - key: SpriteEditor.SliceSettings
-        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":16.0,"y":8.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":1,"keepEmptyRects":false,"isAlternate":false}'
+        value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":1.0,"y":1.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
+      - key: SpriteEditor.SliceOnImport
+        value: False
     nameFileIdTable:
-      flecha_0: 8205950651708530623
-      flecha_1: -939256950
+      flecha_0: 361590115
+      flecha_1: 1970985323
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

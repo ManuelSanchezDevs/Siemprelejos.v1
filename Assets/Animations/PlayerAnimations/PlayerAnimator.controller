@@ -39,14 +39,14 @@ AnimatorStateMachine:
     m_Position: {x: 550, y: -40, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 2207634645179295368}
-    m_Position: {x: 550, y: 70, z: 0}
+    m_Position: {x: 550, y: 110, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []
   m_StateMachineTransitions: {}
   m_StateMachineBehaviours: []
   m_AnyStatePosition: {x: 50, y: 20, z: 0}
-  m_EntryPosition: {x: 50, y: 120, z: 0}
+  m_EntryPosition: {x: 570, y: -170, z: 0}
   m_ExitPosition: {x: 800, y: 120, z: 0}
   m_ParentStateMachinePosition: {x: 800, y: 20, z: 0}
   m_DefaultState: {fileID: 6333803819988171670}
@@ -73,6 +73,24 @@ AnimatorController:
     m_Controller: {fileID: 9100000}
   - m_Name: isMoving
     m_Type: 4
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 9100000}
+  - m_Name: AttackArrow
+    m_Type: 9
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 9100000}
+  - m_Name: AttackDirectionX
+    m_Type: 1
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 9100000}
+  - m_Name: AttackDirectionY
+    m_Type: 1
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
