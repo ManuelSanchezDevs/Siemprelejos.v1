@@ -1498,11 +1498,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!50 &1102054296 stripped
-Rigidbody2D:
-  m_CorrespondingSourceObject: {fileID: 8224181365135573266, guid: 2edcb8f584a2b0b48bf3abd4be9d83fe, type: 3}
-  m_PrefabInstance: {fileID: 7116724720540183769}
-  m_PrefabAsset: {fileID: 0}
 --- !u!95 &1102054298 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 4561765915212743108, guid: 2edcb8f584a2b0b48bf3abd4be9d83fe, type: 3}
@@ -1538,7 +1533,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::AttackManager
   animator: {fileID: 1102054298}
-  rb: {fileID: 1102054296}
 --- !u!4 &1142542683
 Transform:
   m_ObjectHideFlags: 0

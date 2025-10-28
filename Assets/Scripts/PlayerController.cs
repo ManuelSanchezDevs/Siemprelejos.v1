@@ -1,5 +1,3 @@
-// 08/10/2025 AI-Tag
-// This was created with the help of Assistant, a Unity Artificial Intelligence product.
 
 using System;
 using UnityEditor;
@@ -20,7 +18,8 @@ public class PlayerController : MonoBehaviour
     private Vector2 direction;
     private Transform playerTransform;
 
-    private int lastDirectionX = 1;
+    private Vector2 lastDirection = Vector2.right; // dirección por defecto
+
     private int idValueX, idValueY, idIsMoving;
 
     private void Awake()
@@ -72,7 +71,14 @@ public class PlayerController : MonoBehaviour
 
     private void Attack(InputAction.CallbackContext context)
     {
-        attackScript.PerformAttack();
+        Vector2 attackDir = direction;
+
+        if (attackDir == Vector2.zero)
+        {
+            attackDir = lastDirection;
+        }
+
+            attackScript.PerformAttack(attackDir);
     }
 
     private void StopAttack(InputAction.CallbackContext context)
@@ -97,8 +103,8 @@ public class PlayerController : MonoBehaviour
             animator.SetFloat(idValueY, currentVelocity.y);
             animator.SetBool(idIsMoving, true);
 
-            if (direction.x != 0)
-                lastDirectionX = direction.x > 0 ? 1 : -1;
+            if (direction != Vector2.zero)
+                lastDirection = direction;
         }
         else
         {
@@ -109,7 +115,8 @@ public class PlayerController : MonoBehaviour
 
     private void Flip()
     {
-        playerTransform.localScale = new Vector3(lastDirectionX, 1, 1);
+        float scaleX = lastDirection.x >= 0 ? 1f : -1f;
+        playerTransform.localScale = new Vector3(scaleX, 1f, 1f);
     }
 
     private void FixedUpdate()
