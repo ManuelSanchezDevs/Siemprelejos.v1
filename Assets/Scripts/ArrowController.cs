@@ -1,4 +1,3 @@
-using Unity.VisualScripting;
 using UnityEngine;
 
 public class ArrowController : MonoBehaviour
@@ -18,7 +17,6 @@ public class ArrowController : MonoBehaviour
     void Update()
     {
         arrowRB.linearVelocity = arrowDirection * velocity;
-        
     }
 
     //private void OnCollisionEnter2D(Collision2D other)
@@ -36,6 +34,12 @@ public class ArrowController : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
+    public void SetDirection(Vector2 dir)
+    {
+        arrowDirection = dir.normalized;
+    }
+
 
     private void OnBecameInvisible()
     {

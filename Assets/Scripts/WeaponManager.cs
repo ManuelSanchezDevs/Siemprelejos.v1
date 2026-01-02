@@ -16,5 +16,4 @@ public class WeaponManager : MonoBehaviour
     {
         animator.runtimeAnimatorController = iddleOverride;
     }
-
 }
