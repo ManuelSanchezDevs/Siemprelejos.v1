@@ -1429,61 +1429,10 @@ Transform:
   - {fileID: 1886631424}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &797029084
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 797029086}
-  - component: {fileID: 797029085}
-  m_Layer: 0
-  m_Name: WeaponManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 0
---- !u!114 &797029085
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 797029084}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ffc77011a56ae204b85caee4b56917e6, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::WeaponManager
-  animator: {fileID: 1121970954}
-  iddleOverride: {fileID: 22100000, guid: e2a7f1323b104fc48a7cac66c3d4953f, type: 2}
---- !u!4 &797029086
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 797029084}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!95 &1102054298 stripped
 Animator:
   m_CorrespondingSourceObject: {fileID: 4561765915212743108, guid: 2edcb8f584a2b0b48bf3abd4be9d83fe, type: 3}
   m_PrefabInstance: {fileID: 7116724720540183769}
-  m_PrefabAsset: {fileID: 0}
---- !u!95 &1121970954 stripped
-Animator:
-  m_CorrespondingSourceObject: {fileID: 5883822374495239931, guid: a016e28b05c951848ad432df599408b3, type: 3}
-  m_PrefabInstance: {fileID: 2570852017739428598}
   m_PrefabAsset: {fileID: 0}
 --- !u!1 &1142542681
 GameObject:
@@ -3836,7 +3785,6 @@ SceneRoots:
   - {fileID: 619394802}
   - {fileID: 1625419643}
   - {fileID: 1700356504}
-  - {fileID: 797029086}
   - {fileID: 7116724720540183769}
   - {fileID: 2570852017739428598}
   - {fileID: 689045966}

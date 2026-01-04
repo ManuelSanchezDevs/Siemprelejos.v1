@@ -18,7 +18,7 @@ public class PlayerController : MonoBehaviour
     private Vector2 direction;
     private Transform playerTransform;
 
-    private Vector2 lastDirection = Vector2.right; // dirección por defecto
+    private Vector2 lastDirection = Vector2.down; // dirección por defecto
 
     private int idValueX, idValueY, idIsMoving;
 

@@ -10,7 +10,7 @@ public class ArrowController : MonoBehaviour
     private void Awake()
     {
         arrowRB = GetComponent<Rigidbody2D>();
-        arrowDirection = Vector2.right;
+        //arrowDirection = Vector2.down;
     }
 
     // Update is called once per frame
@@ -18,14 +18,6 @@ public class ArrowController : MonoBehaviour
     {
         arrowRB.linearVelocity = arrowDirection * velocity;
     }
-
-    //private void OnCollisionEnter2D(Collision2D other)
-    //{
-    //    if (other.collider.CompareTag("collision"))
-    //    { 
-    //        Destroy(gameObject);
-    //    }
-    //}
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
@@ -39,7 +31,6 @@ public class ArrowController : MonoBehaviour
     {
         arrowDirection = dir.normalized;
     }
-
 
     private void OnBecameInvisible()
     {

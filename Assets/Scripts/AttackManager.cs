@@ -32,8 +32,6 @@ public class AttackManager : MonoBehaviour
         playerTransform = playerArrow.transform.position;
         GameObject arrow = Instantiate(arrowprefab,playerTransform,Quaternion.identity);
 
-        Debug.Log("Prefab instanciado: " + arrow.name);
-        Debug.Log("ArrowController encontrado: " + arrow.GetComponent<ArrowController>());
         ArrowController arrowController = arrow.GetComponent<ArrowController>();
         arrowController.SetDirection(direction);
         // 2. Calcular rotación según la dirección
