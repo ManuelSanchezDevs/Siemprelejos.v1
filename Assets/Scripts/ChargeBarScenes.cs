@@ -1,10 +1,8 @@
-using System.Collections;
-using Unity.Mathematics;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
-public class ChargeBar : MonoBehaviour
+public class ChargeBarScenes : MonoBehaviour
 {
     [SerializeField] private Slider sliderCharge;
     [SerializeField] private float velocity;
@@ -14,10 +12,9 @@ public class ChargeBar : MonoBehaviour
     {
         sliderCharge = GameObject.Find("Slider").GetComponent<Slider>();
         sliderCharge.value = 0;
-        
     }
 
-    private void Update()
+    void Update()
     {
         ChargeBarra();
     }
@@ -26,16 +23,17 @@ public class ChargeBar : MonoBehaviour
     {
         if (delayTime > 0)
         {
-            delayTime -= 1 * Time.deltaTime;
+            delayTime -= Time.deltaTime;
+            return;
         }
 
-        if (sliderCharge.value < 100 && delayTime <= 0)
+        if (sliderCharge.value < 100)
         {
-            sliderCharge.value += 1 * Time.deltaTime * velocity;
+            sliderCharge.value += Time.deltaTime * velocity;
         }
-        if(sliderCharge.value == 100)
+        else
         {
-            SceneManager.LoadScene(1);
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
         }
     }
 }
