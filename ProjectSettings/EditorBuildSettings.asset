@@ -12,7 +12,7 @@ EditorBuildSettings:
     path: Assets/Scenes/PlayerSelect.unity
     guid: 83706fb9ee278a044a1378074e6bd019
   - enabled: 1
-    path: Assets/Scenes/IntroGirl.unity
+    path: Assets/Scenes/IntroHistory.unity
     guid: 5d67ecc160a4d8e45a99e131bd3d77f7
   - enabled: 1
     path: Assets/Scenes/house.unity
