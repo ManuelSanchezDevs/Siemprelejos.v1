@@ -4,6 +4,6 @@ public class Gender : MonoBehaviour
 {
     public string GetPronoum()
     {
-        return PlayerData.Instance.sex == Sex.Boy ? "El" : "La";
+        return PlayerData.Instance.sex == Sex.Boy ? "El " : "La ";
     }
 }

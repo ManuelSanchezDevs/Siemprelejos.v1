@@ -9,7 +9,6 @@ public class FadePanel : MonoBehaviour
 
     private void Awake()
     {
-        //DontDestroyOnLoad(gameObject);
         panelImage = GetComponent<Image>();
     }
 
@@ -22,9 +21,6 @@ public class FadePanel : MonoBehaviour
     {
         float target = panelImage.color.a == 1f ? 0f : 1f;
         StopAllCoroutines();
-
-
-
         StartCoroutine(FadeRoutine(target));
     }
 
@@ -37,6 +33,5 @@ public class FadePanel : MonoBehaviour
             panelImage.color = c;
             yield return null;
         }
-        Debug.Log(c.a);
     }
 }

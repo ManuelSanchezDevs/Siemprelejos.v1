@@ -91,7 +91,7 @@ public class SelectorPlayerButtons : MonoBehaviour
     public IEnumerator ChangeScene(float delayTime)
     {
         yield return new WaitForSeconds(delayTime);
-        PlayerData.Instance.playerName = playerName.text;
+        PlayerData.Instance.PlayerName = playerName.text;
         SceneManager.LoadScene(2);
     }
 
@@ -107,7 +107,7 @@ public class SelectorPlayerButtons : MonoBehaviour
 
     private void SelectCharacter(string characterName, Sex sex)
     {
-        PlayerData.Instance.selectedCharacter = characterName;
+        PlayerData.Instance.SelectedCharacter = characterName;
         PlayerData.Instance.sex = sex;
     }
 }

@@ -97,8 +97,6 @@ public class PlayerController : MonoBehaviour
 
         Vector2 currentVelocity = rb.linearVelocity;
 
-
-
         if (Mathf.Abs(direction.x) > Mathf.Abs(direction.y))
             direction = new Vector2(Mathf.Sign(direction.x), 0f);
         else if (Mathf.Abs(direction.y) > 0)
@@ -112,7 +110,6 @@ public class PlayerController : MonoBehaviour
             animator.SetFloat(idValueX, Mathf.Abs(currentVelocity.x));
             animator.SetFloat(idValueY, currentVelocity.y);
             animator.SetBool(idIsMoving, true);
-
             if (direction != Vector2.zero)
                 lastDirection = direction;
         }

@@ -3,29 +3,17 @@ using UnityEngine.UI;
 
 public class SpritesManager : MonoBehaviour
 {
-    public SpriteRenderer playerSprite;
-    public Sprite boy;
-    public Sprite girl;
+    public GameObject playerBoy;
+    public GameObject playerGirl;
 
     private void Start()
     {
-        ShowSprite();
-    }
-    private void Update()
-    {
-        ShowSprite();
-    }
-
-    public void ShowSprite()
-    {
+        PlayerData.Instance.sex = Sex.Girl;
         if (PlayerData.Instance.sex == Sex.Boy)
         {
-            playerSprite.sprite = boy;
+            Instantiate(playerBoy,transform);
         }
-        if (PlayerData.Instance.sex == Sex.Girl)
-        {
-            playerSprite.sprite = girl;
-        }
+        else
+            Instantiate(playerGirl,transform);
     }
-
 }
