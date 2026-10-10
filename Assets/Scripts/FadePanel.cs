@@ -1,5 +1,6 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class FadePanel : MonoBehaviour
@@ -14,6 +15,13 @@ public class FadePanel : MonoBehaviour
 
     void Start()
     {
+        string name = "IntroHistory";
+        if (name == SceneManager.GetActiveScene().name)
+        {
+            Color c = panelImage.color;
+            c.a = 1f;
+            panelImage.color = c;
+        }
         FadeInOut();
     }
 

@@ -1,7 +1,5 @@
-using NUnit.Framework;
 using System.Collections;
 using System.Collections.Generic;
-using System.Runtime.CompilerServices;
 using TMPro;
 using UnityEngine;
 
@@ -9,7 +7,9 @@ public class Dialogue : MonoBehaviour
 {
     public TextMeshProUGUI dialogueText;
     private Gender gender;
-    private int index = 3;
+    [SerializeField]private int _index = 0; 
+    public int Index { get { return _index; } set { _index = value; } }
+    public float espera;
 
     private List<string> text = new List<string>()
     {
@@ -17,39 +17,32 @@ public class Dialogue : MonoBehaviour
         "Las tribus salvajes del norte invaden sus territorios",
         "un mal desconocido los esta expulsando de sus tierras",
         " PRONOMBRE joven PLAYERNAME avanzaba entre los arboles buscando OBJETIVO.",
-        " ELELLA pensaba que podria mejorar armas para defender la aldea  " +
-        "",
-        "manolo este es el segundo texto cabe bien en el recuadro? ",
-        "y este es el tercer texto dentro del recuadro",
-        "otra frase mas "
+        " ELELLA pensaba que podria mejorar armas para defender la aldea",
+        " Ups no deberia haber ido SOLOSOLA ......",
     };
 
     private void Start()
     {
         dialogueText = GameObject.Find("Dialogue").GetComponent<TextMeshProUGUI>();
         gender = GameObject.Find("Gender").GetComponent<Gender>();
-        StartCoroutine(FadeText(1f));
+        StartCoroutine(FadeText(espera));
     }
 
     IEnumerator FadeText(float delay)
     {
-        while (index < text.Count)
+        while (_index < text.Count)
         {
-            yield return new WaitForSeconds(2);
+            yield return new WaitForSeconds(delay);
             // 1. Asignar texto
-            string procesado = ProcesarGenero(text[index]);
+            string procesado = ProcesarGenero(text[_index]);
             dialogueText.text = procesado;
             // 2. Fade in
-            yield return FadeAlphaRoutine(1f, 2f);
+            yield return FadeAlphaRoutine(1f, 1f);
             // 3. Tiempo visible
-            yield return new WaitForSeconds(2f);
+            yield return new WaitForSeconds(delay);
             // 4. Fade out
-            yield return FadeAlphaRoutine(0f, 2f);
-            // 5. Pausa entre textos
-            //yield return new WaitForSeconds(1);
-            // 6. Siguiente texto
-            index++;
-            print(index);
+            yield return FadeAlphaRoutine(0f, 1f);
+            _index++;
         }
     }
 
@@ -81,6 +74,7 @@ public class Dialogue : MonoBehaviour
         string amigo = esHombre ? "amigo" : "amiga";
         string hijo = esHombre ? "hijo" : "hija";
         string profesion = esHombre ? "mineria" : "herboristeria";
+        string soloSola = esHombre ? "solo" : "sola";
 
         // Reemplazos
         raw = raw.Replace("PRONOMBRE",pronombre);
@@ -90,6 +84,7 @@ public class Dialogue : MonoBehaviour
         raw = raw.Replace("AMIGO", amigo);
         raw = raw.Replace("HIJO", hijo);
         raw = raw.Replace("PROFESION", profesion);
+        raw = raw.Replace("SOLOSOLA", soloSola);
 
         return raw;
     }

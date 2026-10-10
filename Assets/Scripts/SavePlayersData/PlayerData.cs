@@ -20,8 +20,6 @@ public class PlayerData : MonoBehaviour
     private void Awake()
     {
 
-        Debug.Log("PlayerData creado en: " + gameObject.scene.name);
-
         if (Instance == null)
         {
             Instance = this;

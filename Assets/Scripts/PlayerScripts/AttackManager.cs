@@ -21,7 +21,7 @@ public class AttackManager : MonoBehaviour
         IdShootX = Animator.StringToHash("ShootX");
         IdShootUp = Animator.StringToHash("ShootUp");
         IdshootDown = Animator.StringToHash("ShootDown");
-        playerArrow = GameObject.Find("PlayerTopDown");
+        playerArrow = GameObject.Find("PlayerGirlTopDown");
     }
 
     public void PerformAttack(Vector2 direction)
